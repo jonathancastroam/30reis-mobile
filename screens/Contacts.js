@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Header, ListItem, Avatar } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
-import EditContactScreen from './EditContact';
 
 function ContactsScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
@@ -22,20 +21,18 @@ function ContactsScreen({ navigation }) {
 
     return (
       <View>
-        <Stack.Screen name="AddContact" component={HomeScreen} />       
-        <Stack.Screen name="EditContact" component={EditContactScreen} /> 
-        <Header
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Header 
           placement="top"
-          leftComponent={{ icon: 'chevron-left', color: '#fff', onPress: () => navigation.goBack() }}
-          centerComponent={{ text: 'Lista de contatos', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'add', color: '#fff', onPress: () => navigation.navigate('AddContact') }}
+          backgroundColor='#fff'
+          centerComponent={{ text: '30reis', style: styles.heading }}
+          leftComponent={{ icon: 'chevron-left', color: '#129E13', onPress: () => navigation.goBack() }}
+          rightComponent={{ icon: 'add', color: '#129E13', onPress: () => navigation.goBack() }}
         />
 
         <View>
           {list.map((l, i) => (
-              <ListItem 
-                key={i} bottomDivider
-                onPress={()=>navigation.navigate('EditContact')}>
+              <ListItem  key={i} bottomDivider >
                 <Avatar source={{uri: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png'}} />
                 <ListItem.Content>
                   <ListItem.Title>{l.name}</ListItem.Title>
@@ -54,3 +51,20 @@ function ContactsScreen({ navigation }) {
   };
 
 export default ContactsScreen;
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#397af8',
+    marginBottom: 20,
+    width: '100%',
+    paddingVertical: 15,
+    flex: 3,
+  },
+  heading: {
+    color: '#129E13',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+});
