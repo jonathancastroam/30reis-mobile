@@ -1,23 +1,16 @@
-import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Button, Header, Input, Avatar, Accessory } from 'react-native-elements';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './HomeScreen';
+import * as React from 'react'
+import { View, StyleSheet } from 'react-native'
+import { Button, Input, Avatar, Accessory } from 'react-native-elements'
+//import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import CommonHeader from '../components/CommonHeader'
 
 function EditProfileScreen({ navigation }) {
-    const Stack = createNativeStackNavigator();
+   // const Stack = createNativeStackNavigator()
 
     return (
-      <View style={{ flex: 1, alignItems: 'center'}}>
-        
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <View style={{ flex: 1, alignItems: 'center', backgroundColor:'#fff'}}>
 
-        <Header 
-          placement="top"
-          backgroundColor='#fff'
-          centerComponent={{ text: '30reis', style: styles.heading }}
-          leftComponent={{ icon: 'chevron-left', color: '#129E13', onPress: () => navigation.goBack() }}
-        />
+        <CommonHeader/>
 
         <View style={{marginTop: 50}}>
             <Avatar
@@ -59,11 +52,11 @@ function EditProfileScreen({ navigation }) {
             title="Salvar"
             titleStyle={{color:'#129E13',fontSize:18, fontWeight:'bold'}}
             type="clear"
-            onPress={() => navigation.navigate('Home')} />
+            onPress={() => navigation.goBack()} />
         </View>
 
       </View>
-    );
+    )
   }
 
   export default EditProfileScreen;
@@ -82,4 +75,4 @@ function EditProfileScreen({ navigation }) {
       fontSize: 22,
       fontWeight: 'bold',
     },
-  });
+  })

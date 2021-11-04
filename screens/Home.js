@@ -1,30 +1,26 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Header, Button} from 'react-native-elements';
+import { Button } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ContactsScreen from './Contacts';
 import EditProfileScreen from './EditProfile';
+import SearchScreen from './Search';
+import CommonHeader from '../components/CommonHeader';
 
 function HomeScreen({ navigation }) {
+    
     const Stack = createNativeStackNavigator();
+    
+
 
     return (
-      <View style={{ flex: 1, alignItems: 'center'}}>
+      <View style={{ flex: 1, alignItems: 'center', backgroundColor:'#fff'}}>
         
         <Stack.Screen name="Contacts" component={ContactsScreen} />
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+        <Stack.Screen name="Search" component={SearchScreen} />
 
-        <Header 
-          placement="top"
-          backgroundColor='#fff'
-          centerComponent={{ text: '30reis', style: styles.heading }}
-          leftComponent={{
-            icon: 'menu',
-            color: '#129E13',
-            size: 30,
-            styles: styles.headerLeft
-          }}
-        />
+        <CommonHeader/>
 
         <Button
             title="Amigos"
@@ -42,6 +38,13 @@ function HomeScreen({ navigation }) {
             onPress={() => navigation.navigate('EditProfile')}
              />
 
+        <Button
+            title="Pesquisar"
+            titleStyle={{color:'#129E13',fontSize:18, fontWeight:'bold'}}
+            buttonStyle={{paddingBottom:10, paddingTop:10}}
+            type="clear"
+            onPress={() => navigation.navigate('Search')}
+             />
       </View>
     );
   }
@@ -61,6 +64,7 @@ const styles = StyleSheet.create({
     color: '#129E13',
     fontSize: 22,
     fontWeight: 'bold',
+    //alignSelf: 'center'
   },
   headerRight: {
     display: 'flex',

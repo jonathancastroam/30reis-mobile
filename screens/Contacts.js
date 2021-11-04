@@ -1,14 +1,16 @@
-import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Header, ListItem, Avatar } from 'react-native-elements';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './HomeScreen';
+import * as React from 'react'
+import { View, StyleSheet } from 'react-native'
+import { ListItem, Avatar } from 'react-native-elements'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import HomeScreen from './Home'
+import ContactProfileScreen from './ContactProfile'
+import CommonHeader from '../components/CommonHeader'
 
 function ContactsScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
     const list = [
       {
-        name: 'Marcos Andrade',
+        name: 'Marcelo Andrade',
         avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
         subtitle: '81 98855-3424'
       },
@@ -18,21 +20,16 @@ function ContactsScreen({ navigation }) {
         subtitle: '81 99876-5332'
       }
     ];
-
+    //text: '30reis', style: styles.heading }
     return (
-      <View>
+      <View style={{ flex: 1, backgroundColor:'#fff'}}>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Header 
-          placement="top"
-          backgroundColor='#fff'
-          centerComponent={{ text: '30reis', style: styles.heading }}
-          leftComponent={{ icon: 'chevron-left', color: '#129E13', onPress: () => navigation.goBack() }}
-          rightComponent={{ icon: 'add', color: '#129E13', onPress: () => navigation.goBack() }}
-        />
+        <Stack.Screen name="ContactProfile" component={ContactProfileScreen} />
+        <CommonHeader/>
 
         <View>
           {list.map((l, i) => (
-              <ListItem  key={i} bottomDivider >
+              <ListItem  key={i} bottomDivider onPress={()=> navigation.navigate('ContactProfile')}>
                 <Avatar source={{uri: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png'}} />
                 <ListItem.Content>
                   <ListItem.Title>{l.name}</ListItem.Title>

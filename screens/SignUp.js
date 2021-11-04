@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Input, Header, Text, Button } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './HomeScreen';
+import HomeScreen from './Home';
+import CommonHeader from '../components/CommonHeader'
 
 function SignUpScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
@@ -14,12 +15,12 @@ function SignUpScreen({ navigation }) {
         <Header
           placement="top"
           backgroundColor='#fff'
-          leftComponent={{ icon: 'chevron-left', color: '#129E13', onPress: () => navigation.goBack() }}
+          leftComponent={{ icon: 'chevron-left', color: '#129E13', onPress: () => navigation.goBack()}}
+          centerComponent={{text: '30reis', style: styles.heading }}
         />
 
         <Text 
-          style={{fontSize:20, color:'#129E13', fontWeight:"bold", paddingTop: 100}}
-          >
+          style={{fontSize:20, color:'#129E13', fontWeight:"bold", paddingTop: 100}}  >
           Criar conta
         </Text>
 
@@ -29,16 +30,16 @@ function SignUpScreen({ navigation }) {
             inputStyle={{paddingTop:75}}
             />
         <Input
-            name='cpf'
-            placeholder='CPF'
-            />
-        <Input
             name='email'
             placeholder='Email'
             />
         <Input
-            name='senha'
+            name='senha1'
             placeholder='Senha'
+            />
+        <Input
+            name='senha2'
+            placeholder='Confirmar senha'
             />
 
         <Button
@@ -54,3 +55,12 @@ function SignUpScreen({ navigation }) {
   }
 
   export default SignUpScreen;
+
+  const styles = StyleSheet.create({
+    heading: {
+      color: '#129E13',
+      fontSize: 22,
+      fontWeight: 'bold',
+      //alignSelf: 'center'
+    }
+  });
