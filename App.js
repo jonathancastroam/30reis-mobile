@@ -10,6 +10,7 @@ import ContactsScreen from './screens/Contacts';
 import EditProfileScreen from './screens/EditProfile';
 import ContactProfileScreen from './screens/ContactProfile';
 import SearchScreen from './screens/Search';
+import InstitutionProfileScreen from './screens/InstitutionProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ function MyStack() {
       <Stack.Screen name="EditProfile" component={EditProfileScreen} />
       <Stack.Screen name="ContactProfile" component={ContactProfileScreen} />
       <Stack.Screen name="Search" component={SearchScreen} />
+      <Stack.Screen name="Institution" component={InstitutionProfileScreen} />
     </Stack.Navigator>
   );
 }

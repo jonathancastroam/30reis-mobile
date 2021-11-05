@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Scrollview  } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './Home'
@@ -12,12 +12,70 @@ function ContactsScreen({ navigation }) {
       {
         name: 'Marcelo Andrade',
         avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-        subtitle: '81 98855-3424'
       },
       {
         name: 'Patrícia Tavares',
         avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-        subtitle: '81 99876-5332'
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      },
+      {
+        name: 'Lorem Ipsum',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',      
       }
     ];
     //text: '30reis', style: styles.heading }
@@ -28,17 +86,21 @@ function ContactsScreen({ navigation }) {
         <CommonHeader/>
 
         <View>
-          {list.map((l, i) => (
-              <ListItem  key={i} bottomDivider onPress={()=> navigation.navigate('ContactProfile')}>
-                <Avatar source={{uri: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png'}} />
-                <ListItem.Content>
-                  <ListItem.Title>{l.name}</ListItem.Title>
-                  <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
-                </ListItem.Content>
-                <ListItem.Chevron/>
-              </ListItem>
-            ))
-          }
+          
+            {list.map((l, i) => (
+                <ListItem  
+                    key={i} 
+                    onPress={()=> navigation.navigate('ContactProfile')}
+                    >
+                  <Avatar source={require('../assets/avatar.png')} />
+                  <ListItem.Content>
+                    <ListItem.Title>{l.name}</ListItem.Title>
+                  </ListItem.Content>
+                  <ListItem.Chevron/>
+                </ListItem>
+              ))
+            }
+        
         </View>
         
 

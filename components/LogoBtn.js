@@ -14,7 +14,7 @@ const LogoBtn = () => {
             <Button
                 title="30reis"
                 titleStyle={{color:'#129E13',fontSize:20, fontWeight:'bold'}}
-                buttonStyle={{paddingBottom:10, paddingTop:10}}
+                buttonStyle={{paddingBottom:10, paddingTop:-5}}
                 type="clear"
                 containerStyle={{size:10}}
                 //onPress={() => navigation.navigate("Home")}

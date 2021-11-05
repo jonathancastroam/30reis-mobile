@@ -1,14 +1,14 @@
-import React from 'react'
-import {useState} from 'react'
-import { View, ToastAndroid, StyleSheet  } from 'react-native'
-import { Button, Image , Input, Header, Text } from 'react-native-elements'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import ReducedHeader from '../components/ReducedHeader'
-import HomeScreen from './Home'
-import SignUpScreen from './SignUp'
+import React from 'react';
+import {useState} from 'react';
+import { View, ToastAndroid, StyleSheet  } from 'react-native';
+import { Button, Image , Input, Header, Text } from 'react-native-elements';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import PlainHeader from '../components/PlainHeader';
+import HomeScreen from './Home';
+import SignUpScreen from './SignUp';
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
 function LoginScreen({ navigation }) {
     
@@ -40,7 +40,7 @@ function LoginScreen({ navigation }) {
         <Stack.Screen name= "Home"   component={HomeScreen} />
         <Stack.Screen name= "SignUp" component={SignUpScreen} />
         
-        <ReducedHeader/>
+        <PlainHeader/>
 
         <View style={styles.logo}>
             <Image 

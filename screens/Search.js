@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ContactProfileScreen from './ContactProfile';
-import CommonHeader from '../components/CommonHeader'
+import ReducedHeader from '../components/ReducedHeader';
+import HomeScreen from './Home';
 
 function SearchScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
@@ -14,14 +14,16 @@ function SearchScreen({ navigation }) {
     return (
       <View style={{ flex: 1, backgroundColor:'#fff'}}>
         
-        <Stack.Screen name="ContactProfile" component={ContactProfileScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
 
-        <CommonHeader/>
+        <ReducedHeader/>
 
         <SearchBar
-            placeholder="Type Here..."
+            placeholder="Pesquisar?"
             onChangeText={setSearch}
             value={search}
+            containerStyle={styles.searchContainer}
+            inputContainerStyle={styles.searchInput}
         />
 
       </View>
@@ -31,23 +33,12 @@ function SearchScreen({ navigation }) {
   export default SearchScreen;
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    marginBottom: 20,
-    width: '100%',
-    paddingVertical: 15,
+  searchContainer: {
+    backgroundColor:'#fff',
+    borderBottomColor:'#fff',
+    borderTopColor:'#fff'
   },
-  heading: {
-    color: '#129E13',
-    fontSize: 22,
-    fontWeight: 'bold',
-    //alignSelf: 'center'
-  },
-  headerRight: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginTop: 5,
-  },
+  searchInput: {
+    backgroundColor:'#fff'
+  }
 });

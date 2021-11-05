@@ -16,7 +16,6 @@ function EditProfileScreen({ navigation }) {
             <Avatar
                 rounded
                 size="large"
-                icon={{name: 'user', type: 'font-awesome'}}
                 overlayContainerStyle={{backgroundColor: 'lightblue'}}
                 onPress={() => console.log("Works!")}
                 activeOpacity={1.0}
