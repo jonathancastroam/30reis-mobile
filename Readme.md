@@ -1,9 +1,3 @@
-# expo-template-native-base
+<h1>Após clonar o respositório, executar o comando:</h1>
 
-The official NativeBase template for [Expo](https://docs.expo.io/)
-
-## Usage
-
-```sh
-expo init my-app --template expo-template-native-base
-```
+<h2> npm install </h2>
