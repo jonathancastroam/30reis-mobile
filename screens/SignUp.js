@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Input, Header, Text, Button } from 'react-native-elements';
+import { Input, Text, Button } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Home';
-import CommonHeader from '../components/CommonHeader'
+import PlainHeader from '../components/PlainHeader';
 
 function SignUpScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
@@ -12,12 +12,7 @@ function SignUpScreen({ navigation }) {
         
         <Stack.Screen name="Home" component={HomeScreen} />
         
-        <Header
-          placement="top"
-          backgroundColor='#fff'
-          leftComponent={{ icon: 'chevron-left', color: '#129E13', onPress: () => navigation.goBack()}}
-          centerComponent={{text: '30reis', style: styles.heading }}
-        />
+        <PlainHeader/>
 
         <Text 
           style={{fontSize:20, color:'#129E13', fontWeight:"bold", paddingTop: 100}}  >
@@ -26,8 +21,12 @@ function SignUpScreen({ navigation }) {
 
         <Input
             name='nome'
-            placeholder='Nome'
+            placeholder='Primeiro nome'
             inputStyle={{paddingTop:75}}
+            />
+        <Input
+            name='sobrenome'
+            placeholder='Sobreonome'
             />
         <Input
             name='email'
@@ -44,8 +43,8 @@ function SignUpScreen({ navigation }) {
 
         <Button
           title="Salvar"
-          titleStyle={{color:'#129E13',fontSize:18, fontWeight:'bold'}}
-          buttonStyle={{paddingBottom:10, paddingTop:10}}
+          titleStyle={styles.button_text}
+          buttonStyle={styles.button_layout}
           type="clear"
           onPress={() => navigation.navigate('Home')}
         />
@@ -57,10 +56,15 @@ function SignUpScreen({ navigation }) {
   export default SignUpScreen;
 
   const styles = StyleSheet.create({
-    heading: {
-      color: '#129E13',
-      fontSize: 22,
-      fontWeight: 'bold',
-      //alignSelf: 'center'
-    }
+    button_layout:{
+      paddingBottom:5,
+      paddingTop:5,
+      backgroundColor:'#129E13',
+      marginTop: 10
+  },
+  button_text:{
+      color:'#fff',
+      fontSize:18,
+      fontWeight:'100'
+  }
   });

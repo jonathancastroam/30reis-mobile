@@ -1,14 +1,17 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Header } from 'react-native-elements';
+import { Header, Button } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from '../screens/Home';
-import LogoBtn from './LogoBtn';
 
-const Stack = createNativeStackNavigator();
 
-const ReducedHeader = ({ navigation }) => {
+function ReducedHeader() {
+  const Stack = createNativeStackNavigator();
+  var navigation = useNavigation();
+
     return (
       <View style={styles.reducedHeader}>
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -22,10 +25,19 @@ const ReducedHeader = ({ navigation }) => {
               size={15}
               color='#129E13'
               style={styles.commonHeaderIcon}
-              //onPress={() => navigation.goBack()}
+              onPress={() => navigation.goBack()}
             />}
           
-          rightComponent={LogoBtn}
+          rightComponent={
+            <Button
+                title="30reis"
+                titleStyle={{color:'#129E13',fontSize:20, fontWeight:'bold'}}
+                buttonStyle={{paddingBottom:10, paddingTop:-5}}
+                type="clear"
+                containerStyle={{size:10}}
+                onPress={() => navigation.navigate("Home")}
+            />
+          }
         />
       </View>        
     )

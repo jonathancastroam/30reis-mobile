@@ -19,7 +19,7 @@ function SearchScreen({ navigation }) {
         <ReducedHeader/>
 
         <SearchBar
-            placeholder="Pesquisar?"
+            placeholder="Pesquisar"
             onChangeText={setSearch}
             value={search}
             containerStyle={styles.searchContainer}

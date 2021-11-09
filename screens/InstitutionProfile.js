@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
 import { Text, Image } from 'react-native-elements';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ReducedHeader from '../components/ReducedHeader';
 
 function InstitutionProfileScreen() {
@@ -48,7 +47,12 @@ function InstitutionProfileScreen() {
 
         
         <View style={{marginTop: 50, alignItems: 'center'}}>
-            <Text> --POSTAGENS-- </Text>
+            <Text> 
+              ------------------------------------------ </Text>
+            <Text> 
+              --FEED DE POSTAGENS-- </Text>
+            <Text>  
+              ------------------------------------------ </Text>
         </View>
       </View>
     );

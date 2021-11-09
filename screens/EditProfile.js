@@ -25,9 +25,13 @@ function EditProfileScreen({ navigation }) {
         </View>
 
         <Input
-            name='nome completo'
-            placeholder='NOME'
+            name='nome'
+            placeholder='Primeiro nome'
             inputStyle={{marginTop:50}}
+            />
+        <Input
+            name='Sobrenome'
+            placeholder='Sobreonome'
             />
         <Input
             name='cpf'
@@ -35,15 +39,15 @@ function EditProfileScreen({ navigation }) {
             />
         <Input
             name='dataNasc'
-            placeholder='DATA NASCIMENTO'
+            placeholder='Data de nascimento'
             />
         <Input
             name='email'
-            placeholder='EMAIL'
+            placeholder='E-mail'
             />
         <Input
             name='telefone'
-            placeholder='TELEFONE'
+            placeholder='Telefone'
             />
 
         <View style={{marginTop: 50}}>

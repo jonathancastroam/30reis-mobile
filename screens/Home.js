@@ -3,13 +3,13 @@ import { View } from 'react-native';
 import { Button, Text } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import CommonHeader from '../components/CommonHeader';
 import SearchScreen from './Search';
 import ContactsScreen from './Contacts';
 import EditProfileScreen from './EditProfile';
 import InstitutionProfileScreen from './InstitutionProfile';
 
-import Navigation from '../components/Navigation';
-import CommonHeader from '../components/CommonHeader';
+
 
 
 function HomeScreen({ navigation }) {
@@ -35,14 +35,6 @@ function HomeScreen({ navigation }) {
              />
 
         <Button
-            title="Editar perfil"
-            titleStyle={{color:'#129E13',fontSize:18, fontWeight:'bold'}}
-            buttonStyle={{paddingBottom:10, paddingTop:10}}
-            type="clear"
-            onPress={() => navigation.navigate('EditProfile')}
-             />
-
-        <Button
             title="Pesquisar"
             titleStyle={{color:'#129E13',fontSize:18, fontWeight:'bold'}}
             buttonStyle={{paddingBottom:10, paddingTop:10}}
@@ -58,10 +50,13 @@ function HomeScreen({ navigation }) {
              />        
         
         <View style={{marginTop: 50, alignItems: 'center'}}>
-            <Text> --FEED DE POSTAGENS-- </Text>
+            <Text> 
+              ------------------------------------------ </Text>
+            <Text> 
+              --FEED DE POSTAGENS-- </Text>
+            <Text>  
+              ------------------------------------------ </Text>
         </View>
-
-        <Navigation/>
 
       </View>
     );

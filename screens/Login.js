@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import { View, ToastAndroid, StyleSheet  } from 'react-native';
-import { Button, Image , Input, Header, Text } from 'react-native-elements';
+import { Button, Image , Input, Text } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PlainHeader from '../components/PlainHeader';
@@ -82,8 +82,7 @@ function LoginScreen({ navigation }) {
 
             <Text 
                 style={{color:'#129E13', fontSize:14, fontWeight:'normal', alignSelf:'flex-start', paddingLeft:10, marginTop:-15}}
-                onPress={()=>ToastAndroid.show('A ser implementado', ToastAndroid.SHORT)}
-                >
+                onPress={()=>ToastAndroid.show('A ser implementado', ToastAndroid.SHORT)}>
                 Recuperar senha
             </Text>
         </View>

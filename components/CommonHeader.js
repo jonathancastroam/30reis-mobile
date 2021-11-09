@@ -1,34 +1,48 @@
 import React from 'react';
 import { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Header, BottomSheet, ListItem } from 'react-native-elements';
+import { Header, BottomSheet, ListItem, Button } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import LogoBtn from './LogoBtn';
+import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import HomeScreen from '../screens/Home';
 import EditProfileScreen from '../screens/EditProfile';
 
-const CommonHeader = ({navigation}) => {
+
+function CommonHeader() {
     
     const Stack = createNativeStackNavigator();
-
+    var navigation = useNavigation();    
     const [isVisible, setIsVisible] = useState(false);
+
+    function goEdit(){
+      setIsVisible(false);
+      navigation.navigate('EditProfile');
+
+    }
 
     const list = [
       { title: 'Editar perfil',
-        onPress: () => navigation.navigate('EditProfile')
+        containerStyle: { backgroundColor: '#fff' },
+        titleStyle: { color: '#129E13' },
+        onPress: () => goEdit()
       },
       {
         title: 'Cancel',
         containerStyle: { backgroundColor: 'red' },
-        titleStyle: { color: 'white' },
+        titleStyle: { color: '#fff' },
         onPress: () => setIsVisible(false),
-      },
+      }
     ];
 
 
     return (
       <View style={{marginTop:-10}}>
+        
+        <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+
         <Header 
           placement="center"
           backgroundColor='#fff'
@@ -42,7 +56,16 @@ const CommonHeader = ({navigation}) => {
             />
           }
 
-          rightComponent={LogoBtn}
+          rightComponent={
+            <Button
+                title="30reis"
+                titleStyle={{color:'#129E13',fontSize:20, fontWeight:'bold'}}
+                buttonStyle={{paddingBottom:10, paddingTop:-5}}
+                type="clear"
+                containerStyle={{size:10}}
+                onPress={() => navigation.navigate("Home")}
+            />
+          }
         />
         <BottomSheet
           isVisible={isVisible}
