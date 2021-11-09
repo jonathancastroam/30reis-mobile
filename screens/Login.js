@@ -85,7 +85,7 @@ function LoginScreen({ navigation }) {
                 onPress={()=>ToastAndroid.show('A ser implementado', ToastAndroid.SHORT)}>
                 Recuperar senha
             </Text>
-        </View>
+        </View> 
 
         <View style={styles.buttons}>
             <Button
