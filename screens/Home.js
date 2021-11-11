@@ -51,15 +51,15 @@ function HomeScreen({ navigation }) {
           <Image source={require('../assets/feed/ifpe.jpg')}
             style={{ width: 222, height: 150, marginBottom: 75 }} />
 
-          <Text style={{ marginLeft: -98, marginTop: -40 }}>IFPE abre concursos</Text>
+          <Text style={{ marginLeft: -30, marginTop: -40 }}>Palestra de Gestão de Qualidade</Text>
           <Image source={require('../assets/feed/palestra.jpg')}
             style={{ width: 222, height: 150, marginBottom: 75 }} />
-            
-          <Text style={{ marginLeft: -98, marginTop: -40 }}>IFPE abre concursos</Text>
+
+          <Text style={{ marginLeft: -30, marginTop: -40 }}>IFPE divulga calendário letivo.</Text>
           <Image source={require('../assets/feed/ifpe2.jpg')}
             style={{ width: 222, height: 150, marginBottom: 75 }} />
 
-          <Text style={{ marginLeft: -98, marginTop: -40 }}>IFPE abre concursos</Text>
+          <Text style={{ marginLeft: -98, marginTop: -40 }}>Turma ganha prêmio</Text>
           <Image source={require('../assets/feed/02.jpg')}
             style={{ width: 222, height: 150, marginBottom: 75 }} />
 
