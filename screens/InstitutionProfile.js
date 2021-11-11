@@ -18,7 +18,7 @@ function InstitutionProfileScreen() {
                 style={{width:360, height:144, marginBottom:30}}
             />            
             <Text style={[styles.info_name]}>
-                IFPE - Campus Jaboatão
+                IFPE - Campus Jaboatão0
             </Text>
         </View>
 
@@ -50,7 +50,7 @@ function InstitutionProfileScreen() {
             <Text> 
               ------------------------------------------ </Text>
             <Text> 
-              --FEED DE POSTAGENS-- </Text>
+              --FEED DE POSTAGENS3---- </Text>
             <Text>  
               ------------------------------------------ </Text>
         </View>
