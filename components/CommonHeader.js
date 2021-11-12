@@ -8,6 +8,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import HomeScreen from '../screens/Home';
 import EditProfileScreen from '../screens/EditProfile';
+import ContactsScreen from '../screens/Contacts';
+import SearchScreen from '../screens/Search';
+import InstitutionProfileScreen from '../screens/InstitutionProfile';
 
 
 function CommonHeader() {
@@ -22,11 +25,39 @@ function CommonHeader() {
 
     }
 
+    function goContacts(){
+      setIsVisible(false);
+      navigation.navigate('Contacts');
+
+    }
+
+    function goInstitution(){
+      setIsVisible(false);
+      navigation.navigate('Institution');
+
+    }
+
+    function goSearch(){
+      setIsVisible(false);
+      navigation.navigate('Search');
+
+    }
+
     const list = [
       { title: 'Editar perfil',
         containerStyle: { backgroundColor: '#fff' },
         titleStyle: { color: '#129E13' },
         onPress: () => goEdit()
+      },
+      { title: 'Contatos',
+        containerStyle: { backgroundColor: '#fff' },
+        titleStyle: { color: '#129E13' },
+        onPress: () => goContacts()
+      },
+      { title: 'Instituições',
+        containerStyle: { backgroundColor: '#fff' },
+        titleStyle: { color: '#129E13' },
+        onPress: () => goInstitution()
       },
       {
         title: 'Cancel',
@@ -42,6 +73,9 @@ function CommonHeader() {
         
         <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+        <Stack.Screen name="Contacts" component={ContactsScreen} />
+        <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen name="Institution" component={InstitutionProfileScreen} />
 
         <Header 
           placement="center"
@@ -49,14 +83,13 @@ function CommonHeader() {
           leftComponent={
             <Icon
               name='user-circle'
-              size={40}
+              size={30}
               color='#129E13'
               style={styles.commonHeaderIcon}
               onPress={() => setIsVisible(true)}
             />
           }
-
-          rightComponent={
+          centerComponent={
             <Button
                 title="30reis"
                 titleStyle={{color:'#129E13',fontSize:20, fontWeight:'bold'}}
@@ -66,11 +99,21 @@ function CommonHeader() {
                 onPress={() => navigation.navigate("Home")}
             />
           }
+          rightComponent={
+            <Icon
+              name='search'
+              size={25}
+              color='#129E13'
+              style={styles.commonHeaderIcon}
+              onPress={() => goSearch()}
+            />
+          }
         />
         <BottomSheet
           isVisible={isVisible}
           containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}
           >
+          
           {list.map((l, i) => (
             <ListItem key={i} containerStyle={l.containerStyle} onPress={l.onPress}>
               <ListItem.Content>
@@ -78,6 +121,7 @@ function CommonHeader() {
               </ListItem.Content>
             </ListItem>
           ))}
+        
         </BottomSheet>
       </View>        
     )
@@ -88,6 +132,7 @@ export default CommonHeader;
 const styles = StyleSheet.create({
   commonHeaderIcon: {
     paddingLeft:15,
-    paddingTop:0
+    paddingTop:0,
+    paddingRight:15
   }
 });

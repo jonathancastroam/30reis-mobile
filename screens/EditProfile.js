@@ -1,16 +1,14 @@
-import * as React from 'react'
-import { View, StyleSheet } from 'react-native'
-import { Button, Input, Avatar, Accessory } from 'react-native-elements'
-//import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import CommonHeader from '../components/CommonHeader'
+import * as React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { Button, Input, Avatar, Accessory } from 'react-native-elements';
+import ReducedHeader from '../components/ReducedHeader';
 
 function EditProfileScreen({ navigation }) {
-   // const Stack = createNativeStackNavigator()
 
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor:'#fff'}}>
 
-        <CommonHeader/>
+        <ReducedHeader/>
 
         <View style={{marginTop: 50}}>
             <Avatar

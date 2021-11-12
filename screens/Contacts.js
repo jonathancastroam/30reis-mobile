@@ -4,7 +4,7 @@ import { ListItem, Avatar } from 'react-native-elements'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './Home'
 import ContactProfileScreen from './ContactProfile'
-import CommonHeader from '../components/CommonHeader'
+import ReducedHeader from '../components/ReducedHeader'
 
 function ContactsScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
@@ -83,7 +83,7 @@ function ContactsScreen({ navigation }) {
       <View style={{ flex: 1, backgroundColor:'#fff'}}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ContactProfile" component={ContactProfileScreen} />
-        <CommonHeader/>
+        <ReducedHeader/>
 
         <View>
           

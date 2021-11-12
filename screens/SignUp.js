@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Input, Text, Button } from 'react-native-elements';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Home';
-import PlainHeader from '../components/PlainHeader';
+import ReducedHeader from '../components/ReducedHeader';
 
 function SignUpScreen({ navigation }) {
     const Stack = createNativeStackNavigator();
@@ -12,7 +12,7 @@ function SignUpScreen({ navigation }) {
         
         <Stack.Screen name="Home" component={HomeScreen} />
         
-        <PlainHeader/>
+        <ReducedHeader/>
 
         <Text 
           style={{fontSize:20, color:'#129E13', fontWeight:"bold", paddingTop: 100}}  >
