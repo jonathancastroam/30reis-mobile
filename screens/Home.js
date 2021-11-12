@@ -14,37 +14,10 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#fff' }}>
       <ScrollView vertical={true}>
-        <Stack.Screen name="Contacts" component={ContactsScreen} />
-        <Stack.Screen name="EditProfile" component={EditProfileScreen} />
-        <Stack.Screen name="Search" component={SearchScreen} />
-        <Stack.Screen name="Institution" component={InstitutionProfileScreen} />
 
         <CommonHeader />
 
-        <Button
-          title="Amigos"
-          titleStyle={{ color: '#129E13', fontSize: 18, fontWeight: 'bold' }}
-          buttonStyle={{ paddingBottom: 10, paddingTop: 10 }}
-          type="clear"
-          onPress={() => navigation.navigate('Contacts')}
-        />
-
-        <Button
-          title="Pesquisar"
-          titleStyle={{ color: '#129E13', fontSize: 18, fontWeight: 'bold' }}
-          buttonStyle={{ paddingBottom: 10, paddingTop: 10 }}
-          type="clear"
-          onPress={() => navigation.navigate('Search')}
-        />
-        <Button
-          title="Instituições"
-          titleStyle={{ color: '#129E13', fontSize: 18, fontWeight: 'bold' }}
-          buttonStyle={{ paddingBottom: 10, paddingTop: 10 }}
-          type="clear"
-          onPress={() => navigation.navigate('Institution')}
-        />
-
-        <View style={{ marginTop: 100, alignItems: 'center' }}>
+        <View style={{ marginTop: 10, alignItems: 'center' }}>
           <Text>
             ------------------------------------------ </Text>
           <Text style={{ marginLeft: -98, marginTop: -40 }}>IFPE abre concursos</Text>
@@ -63,11 +36,6 @@ function HomeScreen({ navigation }) {
           <Image source={require('../assets/feed/02.jpg')}
             style={{ width: 222, height: 150, marginBottom: 75 }} />
 
-
-          <Text>
-            --FEED DE POSTAGENS-- </Text>
-          <Text>
-            ------------------------------------------ </Text>
         </View>
       </ScrollView>
     </View>

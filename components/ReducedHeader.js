@@ -27,8 +27,7 @@ function ReducedHeader() {
               style={styles.commonHeaderIcon}
               onPress={() => navigation.goBack()}
             />}
-          
-          rightComponent={
+          centerComponent={
             <Button
                 title="30reis"
                 titleStyle={{color:'#129E13',fontSize:20, fontWeight:'bold'}}
@@ -38,6 +37,7 @@ function ReducedHeader() {
                 onPress={() => navigation.navigate("Home")}
             />
           }
+      
         />
       </View>        
     )
